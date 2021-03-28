@@ -1,0 +1,32 @@
+$palette: (
+  primary: #161616,
+  secondary: #BDBDBD,
+  dark: #222222,
+  category1: #2FBA23,
+  category2: #25B6BF,
+  category3: #6C2FBB,
+  category4: #BA3E23,
+  category5: #D6E526,
+  light: #fff,
+  danger: #EB5757,
+  success: #00ff00,
+  warning: #ffd000,
+  muted: #808080
+);
+$lightness: 10;
+
+@function color($name, $tone: base) {
+    $color: map-get($palette, $name);
+
+    @if $tone=='base' {
+      @return $color;
+    }
+
+    @else if $tone=='dark' {
+      @return darken($color, $lightness);
+    }
+
+    @else if $tone=='light' {
+      @return lighten($color, $lightness);
+    }
+  }

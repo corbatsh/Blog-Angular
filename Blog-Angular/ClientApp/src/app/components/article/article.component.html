@@ -1,0 +1,14 @@
+<article class="{{ currentArticle }}" [routerLink]="['/category/'+currentArticle]" data-scroll>
+    <img src="../../../assets/png/{{ currentArticle }}-img-lazy.png"
+     data-src="../../../assets/png/{{ currentArticle }}-img.png"
+      class="lazyload" alt="{{ currentArticle }}-background">
+    <div class="{{ currentCategory }} category">
+      <p>{{ currentCategory }}</p>
+    </div>
+    <div class="description">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+    </div>
+    <div class="read-article">
+      <p class=" {{ currentCategory }}">read more...</p>
+    </div>
+  </article>

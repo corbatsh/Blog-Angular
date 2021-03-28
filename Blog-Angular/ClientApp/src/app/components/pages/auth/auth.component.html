@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="form">
+      <form #auth="ngForm">
+        <p>Administration panel</p>
+
+        <input required type="text" [(ngModel)]="model.username" placeholder="Username" name="username" autocomplete="off"
+           maxlength="25" minlength="3" #username="ngModel">
+
+        <input required type="password" [(ngModel)]="model.password" placeholder="Password" name="password" autocomplete="off"
+           maxlength="25" minlength="3" #password="ngModel">
+
+        <button type="submit" [disabled]="auth.invalid">Login</button>
+
+        <ng-container *ngIf="username.invalid && username.touched">
+          <div class="error" *ngIf="username.hasError('required')">
+            Username is required
+          </div>
+          <div class="error" *ngIf="username.hasError('minlength')">
+            Username is too short
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="password.invalid && password.touched">
+          <div class="error" *ngIf="password.hasError('required')">
+            Password is required
+          </div>
+          <div class="error" *ngIf="password.hasError('minlength')">
+            Password is too short
+          </div>
+        </ng-container>
+        
+      </form>
+    </div>
+  </div>
+</div>

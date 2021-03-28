@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="form">
+      <form #contact="ngForm" id="form">
+        <p>Contact Us</p>
+        <p class="desc">
+          Lorem ipsum dolor sit amet,
+           consectetur adipiscing elit.
+            Cras congue neque eu nisl pretium,
+             a vulputate justo dignissim
+        </p>
+
+        <label>Your Name</label>
+        <input required type="text" [(ngModel)]="model.name" placeholder="First Name and Last Name" name="name"
+          autocomplete="off" maxlength="35" minlength="3" #name="ngModel">
+
+        <label>Your E-mail</label>
+        <input required type="email" [(ngModel)]="model.email" placeholder="example@mail.com" name="email"
+          autocomplete="on" maxlength="25" minlength="6" #email="ngModel">
+
+        <label>Message</label>
+        <textarea maxlength="250" [(ngModel)]="model.message" name="message" placeholder="Your message (max 250 letters)" 
+         minlength="10" #message="ngModel" form="form" required></textarea>
+
+         <p class="required">* Required</p>
+        <button type="submit" [disabled]="contact.invalid">SEND</button>
+
+        <ng-container *ngIf="name.invalid && name.touched">
+          <div class="error" *ngIf="name.hasError('required')">
+            Name is required
+          </div>
+          <div class="error" *ngIf="name.hasError('minlength')">
+            Name is too short
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="email.invalid && email.touched">
+          <div class="error" *ngIf="email.hasError('required')">
+            E-mail is required
+          </div>
+          <div class="error" *ngIf="email.hasError('minlength')">
+            E-mail is wrong
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="message.invalid && message.touched">
+          <div class="error" *ngIf="message.hasError('required')">
+            Message is required
+          </div>
+          <div class="error" *ngIf="message.hasError('minlength')">
+            Message is too short
+          </div>
+        </ng-container>
+
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,104 @@
+<nav class="nav">
+  <div class="container">
+    <div class="title-wrapper">
+      <figure>
+        <img *ngIf="hamburger" class="hamburger" (click)="openNav()" src="assets/svg/hamburger.svg"/>
+        <img *ngIf="close" class="hamburger" (click)="closeNav()" src="assets/svg/close.svg" />
+      </figure>
+      <a class="title" routerLink="/">{{ name }}</a>
+      <div class="search-div">
+        <form *ngIf="form">
+          <input type="search" placeholder="Search..." size="6">
+        </form>
+        <span 
+        *ngIf="searchSpan" class="search-span" (click)="openForm()" [@searchAnimation]>Search
+      </span>
+        <figure class="search">
+          <img src="assets/svg/search.svg" *ngIf="search" (click)="openForm()" [@searchAnimation]>
+          <img src="assets/svg/close.svg" *ngIf="closeSearch" (click)="closeForm()">
+        </figure>
+      </div>
+    </div>
+    <div class="nav-wrapper" (mouseleave)="closeNavCategoriesDesktop()">
+      <ul>
+        <li>
+          <a routerLinkActive="activeLink" routerLink="/homepage">Homepage</a>
+        </li>
+        <li class="li-categories">
+          <a (click)="openNavCategoriesDesktop()" class="categories">Categories
+            <figure class="caret"><img src="assets/svg/caret.svg" /></figure>
+          </a>
+          <ul *ngIf="categories" [@OutAnimation]>
+            <li>
+              <a routerLinkActive="activeLink" routerLink="/Category1">Category 1</a>
+            </li>
+            <li>
+              <a routerLinkActive="activeLink" routerLink="/Category2">Category 2</a>
+            </li>
+            <li>
+              <a routerLinkActive="activeLink" routerLink="/Category3">Category 3</a>
+            </li>
+            <li>
+              <a routerLinkActive="activeLink" routerLink="/Category4">Category 4</a>
+            </li>
+            <li class="category5">
+              <a routerLinkActive="activeLink" routerLink="/Category5">Category 5</a>
+            </li>
+          </ul>
+        </li>
+        <li class="blog">
+          <a routerLinkActive="activeLink" routerLink="/blog">Blog</a>
+        </li>
+        <li>
+          <a routerLinkActive="activeLink" routerLink="/about">About us</a>
+        </li>
+        <li>
+          <a routerLinkActive="activeLink" class="contact-link" routerLink="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="flex-nav-div" *ngIf="sidenav" [@OutAnimation]>
+  <div *ngIf="sidenav" class="sidenav" (click)="closeForm()" (mouseover)="closeNavCategories()">
+    <div class="flex">
+      <ul>
+        <li>
+          <a routerLinkActive="activeLink" routerLink="/homepage">Homepage</a>
+        </li>
+        <li>
+          <a routerLinkActive="activeLink" class="categories"
+            (click)="openNavCategories();">Categories
+            <img class="caret" src="assets/svg/caret.svg" />
+          </a>
+          <ul *ngIf="categories" [@OutAnimation] class="categories-menu-mobile">
+            <li>
+              <a routerLinkActive="activeLink" routerLink="/Category1">Category 1</a>
+            </li>
+            <li>
+              <a routerLinkActive="activeLink" routerLink="/Category2">Category 2</a>
+            </li>
+            <li>
+              <a routerLinkActive="activeLink" routerLink="/Category3">Category 3</a>
+            </li>
+            <li>
+              <a routerLinkActive="activeLink" routerLink="/Category4">Category 4</a>
+            </li>
+            <li><a routerLinkActive="activeLink" routerLink="/Category5">Category 5</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a routerLinkActive="activeLink" routerLink="/blog">Blog</a>
+        </li>
+        <li>
+          <a routerLinkActive="activeLink" routerLink="/about">About us</a>
+        </li>
+        <li class="contact">
+          <a routerLinkActive="activeLink" routerLink="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="other" (click)="closeNav()"></div>
+</div>

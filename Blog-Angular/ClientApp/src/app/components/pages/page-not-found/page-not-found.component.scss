@@ -1,0 +1,20 @@
+@import 'color-pallete';
+@import 'flex';
+.container {
+    background-color: color(primary);
+    height: 100vh;
+    @include flex-center;
+    flex-direction: column;
+
+  p {
+    font-size: 2em;
+    color: color(light);
+    text-align: center;
+  }
+
+  a {
+      color: color(light);
+      text-decoration: underline;
+      font-weight: bold;
+  }
+}

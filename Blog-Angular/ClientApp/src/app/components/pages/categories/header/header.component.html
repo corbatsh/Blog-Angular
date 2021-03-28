@@ -1,0 +1,13 @@
+<header>
+  <img 
+      src="../../../../../assets/png/{{ currentCategory }}-img-lazy.png"
+      attr.data-src="../../../../../assets/png/{{ currentCategory }}.png"
+      class="lazyload" alt="header-background">
+    <div class="front"></div>
+    <div class="category">
+        <p class="{{ currentCategory }}">{{ currentCategory }}</p>
+        <div class="scroll">
+        <a routerLink="/{{ currentCategory }}" fragment="articles"><span></span>See the posts</a>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,25 @@
+@import 'flex';
+@import 'color-pallete';
+@import 'media';
+
+main {
+  width: 100%;
+
+  .container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    @include flex-center;
+    flex-direction: column;
+  }
+}
+
+@include for-desktop-up {
+    main {
+      .container {
+        flex-wrap: wrap;
+        flex-direction: row;
+      }
+    }
+  }
