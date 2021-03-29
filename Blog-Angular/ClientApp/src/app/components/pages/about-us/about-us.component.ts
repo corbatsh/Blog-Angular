@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import 'lazysizes';
 @Component({
   selector: 'app-about-us',
   templateUrl: './about-us.component.html',
