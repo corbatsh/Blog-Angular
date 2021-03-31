@@ -21,6 +21,8 @@ import { RouterModule } from '@angular/router';
 import { AboutUsComponent } from './components/pages/about-us/about-us.component';
 import { HeaderComponent } from './components/pages/categories/category-header/header.component';
 import { AvatarSectionComponent } from './components/pages/about-us/avatar-section/avatar-section.component';
+import { AboutHeaderComponent } from './components/pages/about-us/about-header/about-header.component';
+import { AboutMainComponent } from './components/pages/about-us/about-main/about-main.component';
 declare const require: any;
 const smoothscroll = require('smoothscroll-polyfill');
 smoothscroll.polyfill();
@@ -43,7 +45,9 @@ smoothscroll.polyfill();
     HeaderComponent,
     ArticleComponent,
     AboutUsComponent,
-    AvatarSectionComponent
+    AvatarSectionComponent,
+    AboutHeaderComponent,
+    AboutMainComponent,
   ],
   imports: [
     BrowserModule,
