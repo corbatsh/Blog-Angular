@@ -16,10 +16,13 @@ import { Category2Component } from './components/pages/categories/category2/cate
 import { Category3Component } from './components/pages/categories/category3/category3.component';
 import { Category4Component } from './components/pages/categories/category4/category4.component';
 import { Category5Component } from './components/pages/categories/category5/category5.component';
-import { HeaderComponent } from './components/pages/categories/header/header.component';
 import { ArticleComponent } from './components/article/article.component';
 import { RouterModule } from '@angular/router';
 import { AboutUsComponent } from './components/pages/about-us/about-us.component';
+import { HeaderComponent } from './components/pages/categories/category-header/header.component';
+import { AvatarSectionComponent } from './components/pages/about-us/avatar-section/avatar-section.component';
+import { AboutHeaderComponent } from './components/pages/about-us/about-header/about-header.component';
+import { AboutMainComponent } from './components/pages/about-us/about-main/about-main.component';
 declare const require: any;
 const smoothscroll = require('smoothscroll-polyfill');
 smoothscroll.polyfill();
@@ -42,6 +45,9 @@ smoothscroll.polyfill();
     HeaderComponent,
     ArticleComponent,
     AboutUsComponent,
+    AvatarSectionComponent,
+    AboutHeaderComponent,
+    AboutMainComponent,
   ],
   imports: [
     BrowserModule,

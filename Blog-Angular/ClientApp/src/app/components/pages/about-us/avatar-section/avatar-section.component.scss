@@ -1,0 +1,82 @@
+@import '_flex';
+@import '_color-pallete';
+@import 'media';
+
+section {
+  @include flex-center;
+  flex-direction: column;
+
+  figure {
+    @include flex-center;
+    flex-direction: column;
+    width: fit-content;
+
+    img {
+      width: 120px;
+      margin: 2em auto;
+    }
+
+    figcaption {
+      font-weight: bold;
+      margin-bottom: 2em;
+    }
+  }
+
+  .desc {
+    p {
+      font-weight: normal;
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+}
+
+@include for-phone-up {
+  section {
+    flex-direction: row;
+    height: fit-content;
+    margin-bottom: 4em;
+
+    figure {
+      
+      height: 100%;
+      justify-content: start;
+
+      img {
+        width: 180px;
+        margin-top: 0;
+      }
+
+      figcaption {
+        margin-bottom: 0;
+      }
+    }
+
+    .desc {
+      width: 50%;
+      @include flex-center;
+    }
+  }
+}
+
+@include for-desktop-up {
+  section {
+    width: fit-content;
+    flex-direction: column;
+
+    figure {
+      width: 100%;
+
+      img {
+        width: 240px;
+      }
+    }
+
+    .desc {
+      width: 100%;
+      max-width: 250px;
+      margin-top: 2em;
+    }
+  }
+}
