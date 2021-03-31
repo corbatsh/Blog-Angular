@@ -2,66 +2,107 @@
 @import '_color-pallete';
 @import 'media';
 
+
 header {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  img {
     width: 100%;
     height: 100%;
+    display: block;
+    object-fit: cover;
     position: relative;
-  
-    img {
+  }
+
+  .front {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    opacity: 0.6;
+    background-color: black;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1000px;
+    height: 100%;
+    position: absolute;
+    margin: 0 auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+
+    .text {
       width: 100%;
       height: 100%;
-      display: block;
-      object-fit: cover;
-    }
-  
-    .front {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        opacity: 0.6;
-        background-color: black;
+      position: absolute;
+      top: 0;
+      z-index: 2;
 
       p {
-          color: color(light);
-          font-weight: bold;
+        color: color(light);
+        font-weight: bold;
       }
 
       .who {
-          margin: 15% 0 0 15%;
+        margin: 15% 0 0 10%;
       }
 
-      .desc {
-          margin: .5em 0 0 20%;
+      .p-desc {
+        margin: .5em 0 0 15%;
       }
 
-      .last {
-          margin: 2em 0 0 50%; 
-      }
-    }
-
-    .category {
-        width: 100%;
-        height: 100%;
+      .end {
         position: absolute;
-        top: 0;
-        z-index: 2;
-
-        p {
-            color: color(light);
-            font-weight: bold;
-        }
-  
-        .who {
-            margin: 15% 0 0 10%;
-        }
-  
-        .desc {
-            margin: .5em 0 0 15%;
-        }
-  
-        .end {
-            margin: 5em 0 0 50%; 
-        }
+        right: 3em;
+        bottom: 4em;
+      }
     }
+  }
+}
+
+main {
+  width: 100%;
+  background-color: color(dark);
+  color: color(light);
+
+  .container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    @include flex-center;
+    flex-direction: column;
+    padding: 2em;
+  }
+
+  p {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2em;
+  }
+
+  span {
+    width: 100%;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 2em;
+  }
+}
+
+@include for-phone-up {
+  header {
+    .container {
+      .text {
+        p {
+          font-size: 2em;
+        }
+      }
+    }
+  }
 }
